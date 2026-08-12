@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "base_status": {
+      "hp": 20,
+      "atk": 5,
+      "def": 5,
+      "sp.atk": 5,
+      "sp.def": 5,
+      "speed": 5
+    },
+    "ability": null,
+    "capture_rate": 95,
+    "moveset": [
+      null,
+      null
+    ]
+  }
+]
