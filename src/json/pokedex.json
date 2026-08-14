@@ -8,6 +8,7 @@
     "types": [
       "Grass"
     ],
+    "spawn": 0,
     "base_stats": {
       "hp": 40,
       "atk": 45,
@@ -46,6 +47,7 @@
     "types": [
       "Fire"
     ],
+    "spawn": 0,
     "base_stats": {
       "hp": 45,
       "atk": 60,
@@ -84,6 +86,7 @@
     "types": [
       "Water"
     ],
+    "spawn": 0,
     "base_stats": {
       "hp": 50,
       "atk": 70,
@@ -122,6 +125,7 @@
     "types": [
       "Bug"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 45,
       "atk": 35,
@@ -160,6 +164,7 @@
     "types": [
       "Dark"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 35,
       "atk": 55,
@@ -198,6 +203,7 @@
     "types": [
       "Normal"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 38,
       "atk": 30,
@@ -237,6 +243,7 @@
       "Normal",
       "Flying"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 40,
       "atk": 55,
@@ -275,6 +282,7 @@
     "types": [
       "Grass"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 60,
       "atk": 40,
@@ -314,6 +322,7 @@
       "Psychic",
       "Fairy"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 28,
       "atk": 25,
@@ -352,6 +361,7 @@
     "types": [
       "Ground"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 45,
       "atk": 100,
@@ -391,6 +401,7 @@
       "Fire",
       "Ground"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 60,
       "atk": 60,
@@ -429,6 +440,7 @@
     "types": [
       "Grass"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 50,
       "atk": 85,
@@ -467,6 +479,7 @@
     "types": [
       "Electric"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 40,
       "atk": 45,
@@ -506,6 +519,7 @@
       "Ground",
       "Psychic"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 40,
       "atk": 40,
@@ -544,6 +558,7 @@
     "types": [
       "Ground"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 50,
       "atk": 75,
@@ -583,6 +598,7 @@
       "Steel",
       "Flying"
     ],
+    "spawn": 2,
     "base_stats": {
       "hp": 65,
       "atk": 80,
@@ -622,6 +638,7 @@
       "Steel",
       "Rock"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 50,
       "atk": 70,
@@ -660,6 +677,7 @@
     "types": [
       "Fire"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 70,
       "atk": 85,
@@ -698,6 +716,7 @@
     "types": [
       "Fighting"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 70,
       "atk": 80,
@@ -737,6 +756,7 @@
       "Fighting",
       "Psychic"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 30,
       "atk": 40,
@@ -776,6 +796,7 @@
       "Rock",
       "Ground"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 40,
       "atk": 80,
@@ -814,6 +835,7 @@
     "types": [
       "Psychic"
     ],
+    "spawn": 3,
     "base_stats": {
       "hp": 60,
       "atk": 25,
@@ -853,6 +875,7 @@
       "Grass",
       "Flying"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 99,
       "atk": 68,
@@ -891,6 +914,7 @@
     "types": [
       "Dark"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 65,
       "atk": 130,
@@ -930,6 +954,7 @@
       "Water",
       "Flying"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 60,
       "atk": 50,
@@ -968,6 +993,7 @@
     "types": [
       "Normal"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 60,
       "atk": 90,
@@ -1007,6 +1033,7 @@
       "Normal",
       "Flying"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 45,
       "atk": 40,
@@ -1045,6 +1072,7 @@
     "types": [
       "Water"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 20,
       "atk": 15,
@@ -1083,6 +1111,7 @@
     "types": [
       "Dragon"
     ],
+    "spawn": 4,
     "base_stats": {
       "hp": 45,
       "atk": 75,
@@ -1113,44 +1142,6 @@
     ]
   },
   {
-    "id": 30,
-    "name": "Seedot",
-    "level": 1,
-    "exp": 0,
-    "exp_to_next": 100,
-    "types": [
-      "Grass"
-    ],
-    "base_stats": {
-      "hp": 40,
-      "atk": 40,
-      "def": 50,
-      "speed": 30,
-      "sp.atk": 30,
-      "sp.def": 50
-    },
-    "ability": "Chlorophyll",
-    "capture_rate": 255,
-    "moveset": [
-      {
-        "id": 1,
-        "level": 1
-      },
-      {
-        "id": 2,
-        "level": 7
-      },
-      {
-        "id": 29,
-        "level": 11
-      },
-      {
-        "id": 30,
-        "level": 16
-      }
-    ]
-  },
-  {
     "id": 31,
     "name": "Surskit",
     "level": 1,
@@ -1160,6 +1151,7 @@
       "Bug",
       "Water"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 40,
       "atk": 30,
@@ -1190,45 +1182,6 @@
     ]
   },
   {
-    "id": 32,
-    "name": "Mawile",
-    "level": 1,
-    "exp": 0,
-    "exp_to_next": 100,
-    "types": [
-      "Steel",
-      "Fairy"
-    ],
-    "base_stats": {
-      "hp": 50,
-      "atk": 85,
-      "def": 85,
-      "speed": 50,
-      "sp.atk": 55,
-      "sp.def": 55
-    },
-    "ability": "Hyper Cutter",
-    "capture_rate": 45,
-    "moveset": [
-      {
-        "id": 25,
-        "level": 1
-      },
-      {
-        "id": 26,
-        "level": 12
-      },
-      {
-        "id": 29,
-        "level": 16
-      },
-      {
-        "id": 30,
-        "level": 22
-      }
-    ]
-  },
-  {
     "id": 33,
     "name": "Slakoth",
     "level": 1,
@@ -1237,6 +1190,7 @@
     "types": [
       "Normal"
     ],
+    "spawn": 1,
     "base_stats": {
       "hp": 60,
       "atk": 60,
