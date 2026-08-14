@@ -1,0 +1,1269 @@
+[
+  {
+    "id": 1,
+    "name": "Treecko",
+    "level": 5,
+    "exp": 0,
+    "exp_to_next": 200,
+    "types": [
+      "Grass"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 35,
+      "speed": 70,
+      "sp.atk": 65,
+      "sp.def": 55
+    },
+    "ability": "Overgrow",
+    "capture_rate": 45,
+    "moveset": [
+      {
+        "id": 1,
+        "level": 1
+      },
+      {
+        "id": 30,
+        "level": 4
+      },
+      {
+        "id": 2,
+        "level": 8
+      },
+      {
+        "id": 13,
+        "level": 12
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Torchic",
+    "level": 5,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Fire"
+    ],
+    "base_stats": {
+      "hp": 45,
+      "atk": 60,
+      "def": 40,
+      "speed": 45,
+      "sp.atk": 70,
+      "sp.def": 50
+    },
+    "ability": "Blaze",
+    "capture_rate": 45,
+    "moveset": [
+      {
+        "id": 3,
+        "level": 1
+      },
+      {
+        "id": 30,
+        "level": 5
+      },
+      {
+        "id": 4,
+        "level": 9
+      },
+      {
+        "id": 29,
+        "level": 13
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mudkip",
+    "level": 5,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Water"
+    ],
+    "base_stats": {
+      "hp": 50,
+      "atk": 70,
+      "def": 50,
+      "speed": 40,
+      "sp.atk": 50,
+      "sp.def": 50
+    },
+    "ability": "Torrent",
+    "capture_rate": 45,
+    "moveset": [
+      {
+        "id": 5,
+        "level": 1
+      },
+      {
+        "id": 29,
+        "level": 4
+      },
+      {
+        "id": 6,
+        "level": 8
+      },
+      {
+        "id": 12,
+        "level": 13
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wurmple",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Bug"
+    ],
+    "base_stats": {
+      "hp": 45,
+      "atk": 35,
+      "def": 30,
+      "speed": 20,
+      "sp.atk": 20,
+      "sp.def": 20
+    },
+    "ability": "Shield Dust",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 15,
+        "level": 1
+      },
+      {
+        "id": 1,
+        "level": 5
+      },
+      {
+        "id": 29,
+        "level": 9
+      },
+      {
+        "id": 30,
+        "level": 14
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Poochyena",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Dark"
+    ],
+    "base_stats": {
+      "hp": 35,
+      "atk": 55,
+      "def": 35,
+      "speed": 35,
+      "sp.atk": 30,
+      "sp.def": 30
+    },
+    "ability": "Run Away",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 21,
+        "level": 1
+      },
+      {
+        "id": 17,
+        "level": 6
+      },
+      {
+        "id": 29,
+        "level": 10
+      },
+      {
+        "id": 30,
+        "level": 15
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Zigzagoon",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Normal"
+    ],
+    "base_stats": {
+      "hp": 38,
+      "atk": 30,
+      "def": 41,
+      "speed": 60,
+      "sp.atk": 30,
+      "sp.def": 41
+    },
+    "ability": "Pickup",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 29,
+        "level": 1
+      },
+      {
+        "id": 30,
+        "level": 4
+      },
+      {
+        "id": 17,
+        "level": 8
+      },
+      {
+        "id": 21,
+        "level": 12
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Taillow",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 55,
+      "def": 30,
+      "speed": 85,
+      "sp.atk": 30,
+      "sp.def": 30
+    },
+    "ability": "Guts",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 13,
+        "level": 1
+      },
+      {
+        "id": 14,
+        "level": 7
+      },
+      {
+        "id": 30,
+        "level": 10
+      },
+      {
+        "id": 29,
+        "level": 14
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shroomish",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Grass"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 40,
+      "def": 60,
+      "speed": 35,
+      "sp.atk": 40,
+      "sp.def": 60
+    },
+    "ability": "Effect Spore",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 1,
+        "level": 1
+      },
+      {
+        "id": 2,
+        "level": 6
+      },
+      {
+        "id": 29,
+        "level": 11
+      },
+      {
+        "id": 30,
+        "level": 17
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ralts",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "base_stats": {
+      "hp": 28,
+      "atk": 25,
+      "def": 25,
+      "speed": 40,
+      "sp.atk": 45,
+      "sp.def": 35
+    },
+    "ability": "Synchronize",
+    "capture_rate": 235,
+    "moveset": [
+      {
+        "id": 19,
+        "level": 1
+      },
+      {
+        "id": 20,
+        "level": 8
+      },
+      {
+        "id": 29,
+        "level": 11
+      },
+      {
+        "id": 30,
+        "level": 15
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Trapinch",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Ground"
+    ],
+    "base_stats": {
+      "hp": 45,
+      "atk": 100,
+      "def": 45,
+      "speed": 45,
+      "sp.atk": 45,
+      "sp.def": 45
+    },
+    "ability": "Hyper Cutter",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 11,
+        "level": 1
+      },
+      {
+        "id": 12,
+        "level": 9
+      },
+      {
+        "id": 17,
+        "level": 13
+      },
+      {
+        "id": 18,
+        "level": 17
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Numel",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Fire",
+      "Ground"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 60,
+      "def": 40,
+      "speed": 35,
+      "sp.atk": 65,
+      "sp.def": 45
+    },
+    "ability": "Oblivious",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 3,
+        "level": 1
+      },
+      {
+        "id": 4,
+        "level": 10
+      },
+      {
+        "id": 29,
+        "level": 14
+      },
+      {
+        "id": 11,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Cacnea",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Grass"
+    ],
+    "base_stats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 40,
+      "speed": 35,
+      "sp.atk": 85,
+      "sp.def": 40
+    },
+    "ability": "Sand Veil",
+    "capture_rate": 190,
+    "moveset": [
+      {
+        "id": 1,
+        "level": 1
+      },
+      {
+        "id": 2,
+        "level": 11
+      },
+      {
+        "id": 29,
+        "level": 15
+      },
+      {
+        "id": 30,
+        "level": 20
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Electrike",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Electric"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 40,
+      "speed": 65,
+      "sp.atk": 65,
+      "sp.def": 40
+    },
+    "ability": "Static",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 7,
+        "level": 1
+      },
+      {
+        "id": 8,
+        "level": 12
+      },
+      {
+        "id": 30,
+        "level": 16
+      },
+      {
+        "id": 29,
+        "level": 20
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Baltoy",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Ground",
+      "Psychic"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 40,
+      "def": 55,
+      "speed": 55,
+      "sp.atk": 40,
+      "sp.def": 70
+    },
+    "ability": "Levitate",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 11,
+        "level": 1
+      },
+      {
+        "id": 19,
+        "level": 9
+      },
+      {
+        "id": 29,
+        "level": 14
+      },
+      {
+        "id": 30,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sandshrew",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Ground"
+    ],
+    "base_stats": {
+      "hp": 50,
+      "atk": 75,
+      "def": 85,
+      "speed": 40,
+      "sp.atk": 20,
+      "sp.def": 30
+    },
+    "ability": "Sand Veil",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 11,
+        "level": 1
+      },
+      {
+        "id": 12,
+        "level": 10
+      },
+      {
+        "id": 29,
+        "level": 15
+      },
+      {
+        "id": 30,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Skarmory",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "base_stats": {
+      "hp": 65,
+      "atk": 80,
+      "def": 140,
+      "speed": 70,
+      "sp.atk": 40,
+      "sp.def": 70
+    },
+    "ability": "Keen Eye",
+    "capture_rate": 25,
+    "moveset": [
+      {
+        "id": 9,
+        "level": 1
+      },
+      {
+        "id": 14,
+        "level": 12
+      },
+      {
+        "id": 29,
+        "level": 17
+      },
+      {
+        "id": 30,
+        "level": 21
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Aron",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Steel",
+      "Rock"
+    ],
+    "base_stats": {
+      "hp": 50,
+      "atk": 70,
+      "def": 100,
+      "speed": 30,
+      "sp.atk": 40,
+      "sp.def": 40
+    },
+    "ability": "Sturdy",
+    "capture_rate": 180,
+    "moveset": [
+      {
+        "id": 9,
+        "level": 1
+      },
+      {
+        "id": 10,
+        "level": 11
+      },
+      {
+        "id": 29,
+        "level": 16
+      },
+      {
+        "id": 30,
+        "level": 20
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Torkoal",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Fire"
+    ],
+    "base_stats": {
+      "hp": 70,
+      "atk": 85,
+      "def": 140,
+      "speed": 20,
+      "sp.atk": 85,
+      "sp.def": 70
+    },
+    "ability": "White Smoke",
+    "capture_rate": 90,
+    "moveset": [
+      {
+        "id": 3,
+        "level": 1
+      },
+      {
+        "id": 4,
+        "level": 10
+      },
+      {
+        "id": 29,
+        "level": 15
+      },
+      {
+        "id": 30,
+        "level": 19
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Machop",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Fighting"
+    ],
+    "base_stats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 50,
+      "speed": 35,
+      "sp.atk": 35,
+      "sp.def": 35
+    },
+    "ability": "Guts",
+    "capture_rate": 180,
+    "moveset": [
+      {
+        "id": 17,
+        "level": 1
+      },
+      {
+        "id": 18,
+        "level": 12
+      },
+      {
+        "id": 29,
+        "level": 17
+      },
+      {
+        "id": 30,
+        "level": 21
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Meditite",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Fighting",
+      "Psychic"
+    ],
+    "base_stats": {
+      "hp": 30,
+      "atk": 40,
+      "def": 55,
+      "speed": 60,
+      "sp.atk": 40,
+      "sp.def": 55
+    },
+    "ability": "Pure Power",
+    "capture_rate": 180,
+    "moveset": [
+      {
+        "id": 19,
+        "level": 1
+      },
+      {
+        "id": 20,
+        "level": 11
+      },
+      {
+        "id": 29,
+        "level": 15
+      },
+      {
+        "id": 30,
+        "level": 19
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Geodude",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 80,
+      "def": 100,
+      "speed": 20,
+      "sp.atk": 30,
+      "sp.def": 30
+    },
+    "ability": "Rock Head",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 9,
+        "level": 1
+      },
+      {
+        "id": 10,
+        "level": 8
+      },
+      {
+        "id": 29,
+        "level": 12
+      },
+      {
+        "id": 30,
+        "level": 16
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Spoink",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Psychic"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 25,
+      "def": 35,
+      "speed": 60,
+      "sp.atk": 70,
+      "sp.def": 80
+    },
+    "ability": "Thick Fat",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 19,
+        "level": 1
+      },
+      {
+        "id": 20,
+        "level": 10
+      },
+      {
+        "id": 29,
+        "level": 14
+      },
+      {
+        "id": 30,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Tropius",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "base_stats": {
+      "hp": 99,
+      "atk": 68,
+      "def": 83,
+      "speed": 51,
+      "sp.atk": 72,
+      "sp.def": 87
+    },
+    "ability": "Chlorophyll",
+    "capture_rate": 100,
+    "moveset": [
+      {
+        "id": 1,
+        "level": 1
+      },
+      {
+        "id": 13,
+        "level": 15
+      },
+      {
+        "id": 29,
+        "level": 18
+      },
+      {
+        "id": 30,
+        "level": 22
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Absol",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Dark"
+    ],
+    "base_stats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "speed": 75,
+      "sp.atk": 75,
+      "sp.def": 60
+    },
+    "ability": "Pressure",
+    "capture_rate": 30,
+    "moveset": [
+      {
+        "id": 21,
+        "level": 1
+      },
+      {
+        "id": 22,
+        "level": 13
+      },
+      {
+        "id": 29,
+        "level": 18
+      },
+      {
+        "id": 30,
+        "level": 23
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Pelipper",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 100,
+      "speed": 65,
+      "sp.atk": 95,
+      "sp.def": 70
+    },
+    "ability": "Keen Eye",
+    "capture_rate": 75,
+    "moveset": [
+      {
+        "id": 5,
+        "level": 1
+      },
+      {
+        "id": 6,
+        "level": 12
+      },
+      {
+        "id": 13,
+        "level": 17
+      },
+      {
+        "id": 30,
+        "level": 22
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Kecleon",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Normal"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 90,
+      "def": 70,
+      "speed": 40,
+      "sp.atk": 60,
+      "sp.def": 120
+    },
+    "ability": "Color Change",
+    "capture_rate": 60,
+    "moveset": [
+      {
+        "id": 29,
+        "level": 1
+      },
+      {
+        "id": 30,
+        "level": 10
+      },
+      {
+        "id": 17,
+        "level": 14
+      },
+      {
+        "id": 18,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Swablu",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "base_stats": {
+      "hp": 45,
+      "atk": 40,
+      "def": 60,
+      "speed": 50,
+      "sp.atk": 40,
+      "sp.def": 75
+    },
+    "ability": "Natural Cure",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 13,
+        "level": 1
+      },
+      {
+        "id": 14,
+        "level": 9
+      },
+      {
+        "id": 29,
+        "level": 13
+      },
+      {
+        "id": 30,
+        "level": 18
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Feebas",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Water"
+    ],
+    "base_stats": {
+      "hp": 20,
+      "atk": 15,
+      "def": 20,
+      "speed": 80,
+      "sp.atk": 10,
+      "sp.def": 55
+    },
+    "ability": "Swift Swim",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 5,
+        "level": 1
+      },
+      {
+        "id": 6,
+        "level": 6
+      },
+      {
+        "id": 29,
+        "level": 11
+      },
+      {
+        "id": 30,
+        "level": 14
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Bagon",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Dragon"
+    ],
+    "base_stats": {
+      "hp": 45,
+      "atk": 75,
+      "def": 60,
+      "speed": 50,
+      "sp.atk": 40,
+      "sp.def": 30
+    },
+    "ability": "Rock Head",
+    "capture_rate": 45,
+    "moveset": [
+      {
+        "id": 27,
+        "level": 1
+      },
+      {
+        "id": 28,
+        "level": 13
+      },
+      {
+        "id": 29,
+        "level": 17
+      },
+      {
+        "id": 30,
+        "level": 22
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Seedot",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Grass"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 40,
+      "def": 50,
+      "speed": 30,
+      "sp.atk": 30,
+      "sp.def": 50
+    },
+    "ability": "Chlorophyll",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 1,
+        "level": 1
+      },
+      {
+        "id": 2,
+        "level": 7
+      },
+      {
+        "id": 29,
+        "level": 11
+      },
+      {
+        "id": 30,
+        "level": 16
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Surskit",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Bug",
+      "Water"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "atk": 30,
+      "def": 32,
+      "speed": 65,
+      "sp.atk": 50,
+      "sp.def": 52
+    },
+    "ability": "Swift Swim",
+    "capture_rate": 200,
+    "moveset": [
+      {
+        "id": 15,
+        "level": 1
+      },
+      {
+        "id": 5,
+        "level": 6
+      },
+      {
+        "id": 29,
+        "level": 10
+      },
+      {
+        "id": 30,
+        "level": 14
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Mawile",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "base_stats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 85,
+      "speed": 50,
+      "sp.atk": 55,
+      "sp.def": 55
+    },
+    "ability": "Hyper Cutter",
+    "capture_rate": 45,
+    "moveset": [
+      {
+        "id": 25,
+        "level": 1
+      },
+      {
+        "id": 26,
+        "level": 12
+      },
+      {
+        "id": 29,
+        "level": 16
+      },
+      {
+        "id": 30,
+        "level": 22
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Slakoth",
+    "level": 1,
+    "exp": 0,
+    "exp_to_next": 100,
+    "types": [
+      "Normal"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "atk": 60,
+      "def": 60,
+      "speed": 30,
+      "sp.atk": 35,
+      "sp.def": 35
+    },
+    "ability": "Truant",
+    "capture_rate": 255,
+    "moveset": [
+      {
+        "id": 29,
+        "level": 1
+      },
+      {
+        "id": 30,
+        "level": 6
+      },
+      {
+        "id": 17,
+        "level": 11
+      },
+      {
+        "id": 18,
+        "level": 15
+      }
+    ]
+  }
+]
