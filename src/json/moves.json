@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "Absorb",
+    "type": "Grass",
+    "power": 20,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 2,
+    "name": "Razor Leaf",
+    "type": "Grass",
+    "power": 55,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 3,
+    "name": "Ember",
+    "type": "Fire",
+    "power": 40,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 4,
+    "name": "Flame Wheel",
+    "type": "Fire",
+    "power": 60,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 5,
+    "name": "Water Gun",
+    "type": "Water",
+    "power": 40,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 6,
+    "name": "Water Pulse",
+    "type": "Water",
+    "power": 60,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 7,
+    "name": "Thunder Shock",
+    "type": "Electric",
+    "power": 40,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 8,
+    "name": "Spark",
+    "type": "Electric",
+    "power": 65,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 9,
+    "name": "Rock Throw",
+    "type": "Rock",
+    "power": 50,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 10,
+    "name": "Rock Slide",
+    "type": "Rock",
+    "power": 75,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 11,
+    "name": "Mud-Slap",
+    "type": "Ground",
+    "power": 20,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 12,
+    "name": "Dig",
+    "type": "Ground",
+    "power": 60,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 13,
+    "name": "Gust",
+    "type": "Flying",
+    "power": 40,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 14,
+    "name": "Wing Attack",
+    "type": "Flying",
+    "power": 60,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 15,
+    "name": "Bug Bite",
+    "type": "Bug",
+    "power": 60,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 16,
+    "name": "Signal Beam",
+    "type": "Bug",
+    "power": 75,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 17,
+    "name": "Low Kick",
+    "type": "Fighting",
+    "power": 50,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 18,
+    "name": "Brick Break",
+    "type": "Fighting",
+    "power": 75,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 19,
+    "name": "Confusion",
+    "type": "Psychic",
+    "power": 50,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 20,
+    "name": "Psybeam",
+    "type": "Psychic",
+    "power": 65,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 21,
+    "name": "Bite",
+    "type": "Dark",
+    "power": 60,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 22,
+    "name": "Crunch",
+    "type": "Dark",
+    "power": 80,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 23,
+    "name": "Poison Sting",
+    "type": "Poison",
+    "power": 15,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 24,
+    "name": "Sludge",
+    "type": "Poison",
+    "power": 65,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 25,
+    "name": "Metal Claw",
+    "type": "Steel",
+    "power": 50,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 26,
+    "name": "Iron Head",
+    "type": "Steel",
+    "power": 80,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 27,
+    "name": "Dragon Breath",
+    "type": "Dragon",
+    "power": 60,
+    "category": "Special",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 28,
+    "name": "Dragon Claw",
+    "type": "Dragon",
+    "power": 80,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 29,
+    "name": "Tackle",
+    "type": "Normal",
+    "power": 40,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 0
+  },
+  {
+    "id": 30,
+    "name": "Quick Attack",
+    "type": "Normal",
+    "power": 40,
+    "category": "Physical",
+    "accuracy": 100,
+    "priority": 1
+  }
+]
