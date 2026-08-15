@@ -1,0 +1,90 @@
+{
+    "pokemon": [
+        {
+            "id": 1,
+            "name": "Treecko",
+            "level": 5,
+            "exp": 0,
+            "exp_to_next": 200,
+            "types": [
+                "Grass"
+            ],
+            "spawn": 0,
+            "base_stats": {
+                "hp": 40,
+                "atk": 45,
+                "def": 35,
+                "speed": 70,
+                "sp.atk": 65,
+                "sp.def": 55
+            },
+            "ability": "Overgrow",
+            "capture_rate": 45,
+            "moveset": [
+                {
+                    "id": 1,
+                    "level": 1
+                },
+                {
+                    "id": 30,
+                    "level": 4
+                },
+                {
+                    "id": 2,
+                    "level": 8
+                },
+                {
+                    "id": 13,
+                    "level": 12
+                }
+            ],
+            "current_stats": {
+                "hp": 20,
+                "atk": 10,
+                "def": 9,
+                "speed": 13,
+                "sp.atk": 12,
+                "sp.def": 11
+            }
+        }
+    ],
+    "pokeballs": [
+        {
+            "name": "Pokeball",
+            "id": 1,
+            "quantity": 0
+        },
+        {
+            "name": "Superball",
+            "id": 2,
+            "quantity": 0
+        },
+        {
+            "name": "Ultraball",
+            "id": 3,
+            "quantity": 0
+        },
+        {
+            "name": "Masterball",
+            "id": 4,
+            "quantity": 0
+        }
+    ],
+    "items": [
+        {
+            "name": "Fire Stone",
+            "id": 101,
+            "quantity": 0
+        },
+        {
+            "name": "Water Stone",
+            "id": 102,
+            "quantity": 0
+        },
+        {
+            "name": "Leaf Stone",
+            "id": 103,
+            "quantity": 0
+        }
+    ]
+}

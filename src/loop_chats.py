@@ -1,4 +1,4 @@
-import os, json
+import os, json, keyboard, sys
 from random import randint
 from rich import print
 from rich.panel import Panel
@@ -40,13 +40,45 @@ def Walking(area):
 [bright_magenta]4. Usar Poção
 [red]5. Sair\n""")
 
+
 def Exploring(area):
     current_area = CurrentArea(area)
 
-def OpenBackpack(area):
-    current_area = CurrentArea(area)
+
+def OpenBackpack():
     info = view_backpack(backpack)
 
+    print("[bold italic]Você está na mochila\n")
+    print("""1. Quantidade de Pokémons
+2. Nome dos Pokémons possuído
+3. Quantidade de pokebolas
+4. Quantidade de items
+5. Sair\n""")
+
+    while True:
+        try:
+            event = keyboard.read_event()
+            if event.event_type == keyboard.KEY_DOWN:
+                if event.name == "esc":
+                    break
+
+                inventory = int(event.name)
+
+                match inventory:
+                    case 1:
+                        print(f"\nVocê possui: {info['pokemon_count']} Pokémons")
+                    case 2:
+                        print(f"\nSeus Pokémons: {info['pokemon']}")
+                    case 3:
+                        print(f"\nVocê possui: {info['pokeballs']}")
+                    case 4:
+                        print(f"\nVocê possui: {info['items']}")
+                    case 5:
+                        break
+                    case _:
+                        print("[red bold]Por favor pressione apenas os números 1, 2, 3, 4 ou 5.[/red bold]", end="\r")
+        except:
+            print("[red bold]Por favor pressione apenas os números 1, 2, 3, 4 ou 5.[/red bold]", end="\r")
 
 
 def Searching(area):
