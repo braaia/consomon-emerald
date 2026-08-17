@@ -1,4 +1,5 @@
 from random import choice
+from rich import print
 
 def recalculate_stats(pokemon):
     """Calcula e atualiza os stats atuais com base no level e base_stats"""
@@ -60,7 +61,6 @@ def gain_exp(pokemon, amount):
         })
 
         if pokemon["level"] >= 16:
-            # evoluir
             pass
 
     return levelups
@@ -75,5 +75,6 @@ def lvlUpSystem(pokemon, exp):
             for stat, gain in levelup['stat_gains'].items():
                 print(f"  {stat.upper()}: +{gain}")
             print(f"[bold]Stats atuais:[/bold] {levelup['new_stats']}")
+            print(f"[bold]XP necessário para o proximo nível:[/bold] {pokemon['exp']}/{pokemon['exp_to_next']}")
     else:
         print("\n[yellow]Nenhum levelup ocorreu[/yellow]")
