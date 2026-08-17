@@ -1,18 +1,8 @@
-import keyboard, sys, time, os
+import keyboard
 from time import sleep
 from rich import print
 from rich.progress import Progress
-
-clear = lambda: os.system('cls')
-clear()
-
-def slowtext(text, newline=True):
-    for i in list(text):
-        print(i, end='')
-        sys.stdout.flush()
-        time.sleep(0.03)
-    if newline:
-        print()
+from backend.functions import slowtext, clear
 
 def Dialogue1():
     with Progress() as prog:
@@ -77,9 +67,26 @@ def Dialogue1():
     keyboard.wait('space')
 
 
-    
+def BirchPokeChoise():
+    clear()
 
+    sleep(0.5)
+    slowtext("Birch - Eii!", False)
+    sleep(0.4)
+    slowtext(" Você ai!!")
 
+    sleep(0.8)
+    slowtext("Por favor!", False)
+    sleep(0.4)
+    slowtext(" Me ajude!\n")
+
+    sleep(0.8)
+    slowtext("- Pressione espaço para continuar...")
+    keyboard.wait('space')
+
+    clear()
+    slowtext("Na minha bolsa tem algumas pokebolas!\n")
+    keyboard.wait('space')
 
 
 
