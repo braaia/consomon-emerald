@@ -43,7 +43,7 @@
     "name": "Torchic",
     "level": 5,
     "exp": 0,
-    "exp_to_next": 100,
+    "exp_to_next": 200,
     "types": [
       "Fire"
     ],
@@ -82,7 +82,7 @@
     "name": "Mudkip",
     "level": 5,
     "exp": 0,
-    "exp_to_next": 100,
+    "exp_to_next": 200,
     "types": [
       "Water"
     ],
