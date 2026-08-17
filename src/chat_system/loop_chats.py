@@ -1,17 +1,15 @@
-import os, json, keyboard, sys
+import json, keyboard
 from random import randint
 from rich import print
 from rich.panel import Panel
 from rich.progress import Progress
-from backend.poke_status import *
 from backend.backpack import load_backpack, view_backpack
+from backend.poke_status import *
+from backend.functions import clear
 from time import sleep
 
 with open('json/pokedex.json', 'r', encoding='utf-8') as arq:
     pokedex = json.load(arq)
-
-clear = lambda: os.system('cls')
-clear()
 
 backpack = load_backpack()
 
