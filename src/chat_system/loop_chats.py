@@ -91,27 +91,45 @@ def Searching(area):
             prog.update(task, advance=2.7)
     sleep(1)
     clear()
+    try:
+        chance_find = randint(0,100)
+        if chance_find <= 70:
+            print("Um [green3]Pokémon selvagem[/green3] [bold]APARECEU!\n")
 
-    chance_find = randint(0,100)
-    if chance_find <= 70:
-        print("Um [green3]Pokémon selvagem[/green3] [bold]APARECEU!\n")
+            list_pokemon = []
 
-        list_pokemon = []
+            i = 0
+            for pokemon in pokedex:
+                if pokemon['spawn'] == area:
+                    i += 1
+                    list_pokemon.append(pokemon)
 
-        i = 0
-        for pokemon in pokedex:
-            if pokemon['spawn'] == area:
-                i += 1
-                list_pokemon.append(pokemon)
+            pokemon_id = randint(0, i-1)
+            chosen_pokemon = list_pokemon[pokemon_id]
 
-        chosen_pokemon = randint(0, i-1)
-
-        print(Panel(f"{list_pokemon[chosen_pokemon]['name']}", subtitle=f"Level {list_pokemon[chosen_pokemon]['level']}", height=5, width=16, padding=(1, 3)))
-        print(f"""\n[red]1. Lutar
+            print(Panel(f"{chosen_pokemon['name']}", subtitle=f"Level {chosen_pokemon['level']}", height=5, width=16, padding=(1, 3)))
+            print(f"""\n[red]1. Lutar
 [blue3]2. Capturar
 [bright_white]3. Fugir""")
-    else:
-        print("[red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon")
+        else:
+            print(chance_find)
+            print("[red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon")
+        return chosen_pokemon
+    except:
+        pass
+
+def Fighting(pokemon, enemy):
+    pass
+
+
+
+
+
+
+
+
+
+
 
 
 
