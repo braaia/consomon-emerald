@@ -13,6 +13,25 @@ def slowtext(text, newline=True):
         print()
 
 
+def read_choice(valid_choices):
+    while True:
+        event = keyboard.read_event()
+
+        if event.event_type != keyboard.KEY_DOWN:
+            continue
+
+        if event.name == "esc":
+            return None
+
+        if event.name in valid_choices:
+            return int(event.name)
+
+        print(
+            f"[red bold]Pressione apenas: {', '.join(valid_choices)}[/red bold]",
+            end="\r"
+        )
+
+
 def PokeChoise(pokedex):
     slowtext("PROF. BIRCH está com problemas!")
     sleep(0.5)
