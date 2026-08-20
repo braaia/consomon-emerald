@@ -1,37 +1,24 @@
-import json, keyboard
+import json
 from random import randint
 from rich import print
 from rich.panel import Panel
 from rich.progress import Progress
 from backend.backpack import load_backpack, view_backpack
 from backend.poke_status import *
-from backend.functions import clear, slowtext, read_choice
+from backend.functions import clear, CurrentArea, read_choice
+from backend.world import Exploring
 from time import sleep
 
 with open('json/pokedex.json', 'r', encoding='utf-8') as arq:
     pokedex = json.load(arq)
 
+with open('json/areas.json', 'r', encoding='utf-8') as arq:
+    areas = json.load(arq)
+
 backpack = load_backpack()
+current_area = areas['game_state']['current_area']
 
-def CurrentArea(area):
-    area_atual = None
-    match area:
-        case 1:
-            area_atual = "[green3]Floresta Petalburg Woods.[/green3]"
-
-        case 2:
-            area_atual = "[orange3]Rota 111 (Desertico)[/orange3]"
-
-        case 3:
-            area_atual = "[red3]Mt. Chimney[/red3]"
-
-        case 4:
-            area_atual = "[blue3]Rota 119[/blue3]"
-
-    return area_atual
-    
-
-def Walking(area):
+def Walking(area = current_area):
     current_area = CurrentArea(area)
 
     print(f"[bold italic]Você entrou na [/bold italic][bold]{current_area}\n")
@@ -42,15 +29,10 @@ def Walking(area):
 [bright_magenta]4. Usar Poção
 [red]5. Sair\n""")
 
-
-def Exploring(area):
-    current_area = CurrentArea(area)
-
-
-def Searching(area):
+def Searching(area = current_area):
     current_area = CurrentArea(area)   
 
-    print(f"Você está procurando na grama... ({current_area})\n")
+    print(f"[bold italic]Você está procurando na grama... [/bold italic]({current_area})\n")
 
     with Progress() as prog:
         task = prog.add_task('Procurando...', total=15)
@@ -102,7 +84,7 @@ def Searching(area):
 [bright_white]3. Fugir""")
         else:
             print(chance_find)
-            print("[red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon")
+            print("[bold red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon")
 
         return chosen_pokemon
     except Exception as error:
@@ -146,7 +128,7 @@ def Fight(player, enemy):
             try:
                 clear()
                 print(Panel(battle_text, title="BATALHA POKÉMON", width=28))
-                print("\n[purple4]Escolha uma ação:")
+                print("\n[bold purple4]Escolha uma ação:")
                 print(f"""\n[red]1. Lutar
 [green]2. Pokémon
 [blue3]3. Bolsa
@@ -162,7 +144,7 @@ def Fight(player, enemy):
                     case 1:
                         clear()
                         print(f"{player['name']} Lv.{player['level']}")
-                        print("\n[purple4]Escolha um ataque:")
+                        print("\n[bold purple4]Escolha um ataque:")
 
                         print(f"""1. {attack1}
 2. {attack2}
@@ -177,7 +159,7 @@ def Fight(player, enemy):
                         selected_attack = moveset[attack_selection - 1]
 
                         if player["level"] < player["moveset"][attack_selection - 1]["level"]:
-                            print("[red]Esse ataque ainda está bloqueado.[/red]")
+                            print("[bold red]Esse ataque ainda está bloqueado.[/red]")
                             sleep(1)
                             continue
 
@@ -194,7 +176,7 @@ def Fight(player, enemy):
             except Exception as error:
                 print(f"[red]{error}")
     except Exception as error:
-        print(f"[red]Erro ao iniciar a batalha: {error}[/red]")
+        print(f"[bold red]Erro ao iniciar a batalha: {error}[/red]")
 
 def Fighting(player, enemy, selected_attack):
     ...
