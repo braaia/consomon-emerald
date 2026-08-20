@@ -32,6 +32,24 @@ def read_choice(valid_choices):
         )
 
 
+def CurrentArea(area):
+    area_atual = None
+    match area:
+        case 1:
+            area_atual = "[green3]Floresta Petalburg Woods.[/green3]"
+
+        case 2:
+            area_atual = "[orange3]Rota 111 (Desertico)[/orange3]"
+
+        case 3:
+            area_atual = "[red3]Mt. Chimney[/red3]"
+
+        case 4:
+            area_atual = "[blue3]Rota 119[/blue3]"
+
+    return area_atual
+
+    
 def PokeChoise(pokedex):
     slowtext("PROF. BIRCH está com problemas!")
     sleep(0.5)
