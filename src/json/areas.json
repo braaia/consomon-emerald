@@ -1,0 +1,61 @@
+{
+    "game_state": {
+        "current_area": 1,
+        "explorations": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0
+        },
+        "chosen_paths": { "direction": "straight" },
+        "defeated_gyms": [],
+        "unlocked_areas": [1]
+    },
+    "areas": [
+    {
+        "id": 1,
+        "name": "Floresta Petalburg Woods",
+        "events": [
+        {
+            "type": "path_choice",
+            "trigger_at_exploration": 5,
+            "direction": "straight",
+            "question": "Você quer seguir para a esquerda, direita ou reto?",
+            "options": [
+                { "direction": "left"},
+                { "direction": "right"},
+                { "direction": "straight"}
+            ]
+        },
+        {
+            "type": "item",
+            "name": "Pokeball",
+            "trigger_at_exploration": -3,
+            "direction": "straight",
+            "item_id": "1"
+        },
+        {
+            "type": "gym",
+            "name": "Roxanne",
+            "trigger_at_exploration": 12,
+            "direction": "right",
+            "gym_id": "petalburg_gym"
+        }
+        ],
+        "unlocks": [
+        {
+            "to_area": 2,
+            "direction": "straight",            
+            "required_explorations": 10,
+            "required_gym": "petalburg_gym"
+        }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Rota 111",
+        "events": [],
+        "unlocks": []
+    }
+    ]
+}
