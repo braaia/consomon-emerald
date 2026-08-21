@@ -2,10 +2,10 @@
     "game_state": {
         "current_area": 1,
         "explorations": {
-            "1": 0,
-            "2": 0,
-            "3": 0,
-            "4": 0
+            "1": { "straight": 0, "left": 0, "right": 0 },
+            "2": { "straight": 0, "left": 0, "right": 0 },
+            "3": { "straight": 0, "left": 0, "right": 0 },
+            "4": { "straight": 0, "left": 0, "right": 0 }
         },
         "chosen_paths": { "direction": "straight" },
         "defeated_gyms": [],
@@ -42,20 +42,18 @@
             "gym_id": "petalburg_gym"
         }
         ],
-        "unlocks": [
-        {
+        "unlocks": {
             "to_area": 2,
             "direction": "straight",            
             "required_explorations": 10,
             "required_gym": "petalburg_gym"
         }
-        ]
     },
     {
         "id": 2,
         "name": "Rota 111",
         "events": [],
-        "unlocks": []
+        "unlocks": {}
     }
     ]
 }
