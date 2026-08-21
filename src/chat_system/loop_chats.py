@@ -1,12 +1,12 @@
-import json
+import json, keyboard
 from random import randint
 from rich import print
 from rich.panel import Panel
 from rich.progress import Progress
 from backend.backpack import load_backpack, view_backpack
 from backend.poke_status import *
-from backend.functions import clear, CurrentArea, read_choice
-from backend.world import Exploring
+from backend.functions import clear, current_area, read_choice, slow_text
+from backend.world import exploring, process_area_events
 from time import sleep
 
 with open('json/pokedex.json', 'r', encoding='utf-8') as arq:
@@ -16,34 +16,83 @@ with open('json/areas.json', 'r', encoding='utf-8') as arq:
     areas = json.load(arq)
 
 backpack = load_backpack()
-current_area = areas['game_state']['current_area']
+current_area_id = areas['game_state']['current_area']
 
-def Walking(area = current_area):
-    current_area = CurrentArea(area)
+skip = "\n[bold italic green1]Pressione espaço para continuar..."
 
-    print(f"[bold italic]Você entrou na [/bold italic][bold]{current_area}\n")
+def walking(area=current_area_id):
+    global skip, areas
+    area_name = current_area(area)
 
-    print(f"""[green]1. Explorar
+    while True:
+        try:
+            clear()    
+            print(f"[bold italic]Você entrou na [/bold italic][bold]{area_name}\n")
+
+            print(f"""[green]1. Explorar
 [yellow]2. Procurar Pokémon
 [orange4]3. Abrir Inventário
 [bright_magenta]4. Usar Poção
 [red]5. Sair\n""")
 
-def Searching(area = current_area):
-    current_area = CurrentArea(area)   
+            sleep(0.5)
+            action_choice = read_choice(["1", "2", "3", "4", "5"])
 
-    print(f"[bold italic]Você está procurando na grama... [/bold italic]({current_area})\n")
+            if action_choice is None:
+                break
 
-    with Progress() as prog:
-        task = prog.add_task('Procurando...', total=15)
-        while not prog.finished:
-            sleep(0.3)
-            prog.update(task, advance=2.7)
-    sleep(1)
+            direction = areas['game_state']['chosen_paths']['direction']
+            current_count = areas['game_state']['explorations'].get(str(current_area_id), {}).get(direction, 0)
+
+            match action_choice:
+                case 1:
+                    exploring()
+                    process_area_events()
+                    print(skip)
+                    keyboard.wait('space')
+                    continue
+                case 2:
+                    searching(searching=True)
+                    print(skip)
+                    keyboard.wait('space')
+                    continue
+                case 3:
+                    open_backpack()
+                    print(skip)
+                    keyboard.wait('space')
+                    continue
+                case 4:
+                    print("[red bold]Em construção...")
+                    print(skip)
+                    keyboard.wait('space')
+                    continue
+                case 5:
+                    with Progress() as prog:
+                        task = prog.add_task('Saindo...', total=15)
+                        while not prog.finished:
+                            sleep(0.3)
+                            prog.update(task, advance=2.7)
+                    break
+        except:
+            pass
+    
+
+def searching(area=current_area_id, searching=False):
+    area_name = current_area(area)   
+
+    if searching:
+        print(f"[bold italic]Você está procurando na grama... [/bold italic]({area_name})\n")
+
+        with Progress() as prog:
+            task = prog.add_task('Procurando...', total=15)
+            while not prog.finished:
+                sleep(0.3)
+                prog.update(task, advance=2.7)
+        sleep(1)
     clear()
     try:
         chance_find = randint(0,100)
-        if chance_find <= 100:
+        if chance_find <= 70:
             print("Um [green3]Pokémon selvagem[/green3] [bold]APARECEU!\n")
 
             list_pokemon = []
@@ -84,16 +133,19 @@ def Searching(area = current_area):
 [bright_white]3. Fugir""")
         else:
             print(chance_find)
-            print("[bold red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon")
+            if searching:
+                print("[bold red]Infelizmente vc teve azar e não conseguiu encontrar um Pokémon.")
+            else:
+                print("[bold red]Um pokémon apareceu mas fugiu!")
 
         return chosen_pokemon
-    except Exception as error:
-        print(f"[red]{error}")
+    except:
+        pass
 
 with open("json/moves.json", "r", encoding="utf-8") as arq:
     moves = json.load(arq)
 
-def Fight(player, enemy):
+def fight(player, enemy):
     try:
         player_name = player['name']
         enemy_name = enemy['name']
@@ -134,7 +186,7 @@ def Fight(player, enemy):
 [blue3]3. Bolsa
 [bright_white]4. Fugir""")
                 
-                sleep(1)
+                sleep(0.5)
                 action_choice = read_choice({"1", "2", "3", "4"})
 
                 if action_choice is None:
@@ -151,7 +203,7 @@ def Fight(player, enemy):
 3. {attack3}
 4. {attack4}""")
 
-                        attack_selection = read_choice({"1", "2", "3", "4"})
+                        attack_selection = read_choice(["1", "2", "3", "4"])
 
                         if attack_selection is None:
                             continue
@@ -163,7 +215,7 @@ def Fight(player, enemy):
                             sleep(1)
                             continue
 
-                        Fighting(player, enemy, selected_attack)
+                        fighting(player, enemy, selected_attack)
 
                     case 2:
                         continue
@@ -175,13 +227,15 @@ def Fight(player, enemy):
                         break
             except Exception as error:
                 print(f"[red]{error}")
-    except Exception as error:
-        print(f"[bold red]Erro ao iniciar a batalha: {error}[/red]")
+    except:
+        pass
 
-def Fighting(player, enemy, selected_attack):
+def fighting(player, enemy, selected_attack):
     ...
 
-def OpenBackpack():
+
+def open_backpack():
+    global skip
     info = view_backpack(backpack)
 
     while True:
@@ -195,7 +249,7 @@ def OpenBackpack():
 5. Sair\n""")
 
             sleep(1)
-            inventory = read_choice({"1", "2", "3", "4", "5"})
+            inventory = read_choice(["1", "2", "3", "4", "5"])
             
             if inventory is None:
                 break
@@ -203,24 +257,32 @@ def OpenBackpack():
             match inventory:
                 case 1:
                     print(f"\nVocê possui: {info['pokemon_count']} Pokémons")
+                    keyboard.wait("space")
+                    print(skip)
                     continue
 
                 case 2:
                     print(f"\nSeus Pokémons: {info['pokemon']}")
+                    keyboard.wait("space")
+                    print(skip)
                     continue
                 
                 case 3:
                     print(f"\nVocê possui: {info['pokeballs']}")
+                    keyboard.wait("space")
+                    print(skip)
                     continue
                 
                 case 4:
                     print(f"\nVocê possui: {info['items']}")
+                    keyboard.wait("space")
+                    print(skip)
                     continue
                 
                 case 5:
                     break
-        except Exception as error:
-            print(f"[red]{error}")
+        except:
+            pass
 
 
 
