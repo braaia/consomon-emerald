@@ -2,9 +2,9 @@ import keyboard
 from time import sleep
 from rich import print
 from rich.progress import Progress
-from backend.functions import slowtext, clear
+from backend.functions import slow_text, clear
 
-def Dialogue1():
+def dialogue1():
     with Progress() as prog:
         task = prog.add_task("Iniciando Consomon Emerald...", total=10)
         while not prog.finished:
@@ -14,78 +14,78 @@ def Dialogue1():
     clear()
 
     sleep(0.5)
-    slowtext("??? - Olá!", False)
+    slow_text("??? - Olá!", False)
     sleep(0.4)
-    slowtext(" Desculpe fazer você esperar.\n")
+    slow_text(" Desculpe fazer você esperar.\n")
 
     sleep(0.8)
-    slowtext("- Pressione espaço para continuar...")
+    slow_text("- Pressione espaço para continuar...")
     keyboard.wait('space')
 
     clear()
     sleep(0.5)
-    slowtext("??? - Bem vindo ao mundo do Consomon.\n")
+    slow_text("??? - Bem vindo ao mundo do Consomon.\n")
     keyboard.wait('space')
 
-    slowtext("Birch - Meu nome é BIRCH.")
+    slow_text("Birch - Meu nome é BIRCH.")
     sleep(0.4)
-    slowtext("Mas todo mundo me chama de Professor Pokémon.")
+    slow_text("Mas todo mundo me chama de Professor Pokémon.")
     keyboard.wait('space')
 
     clear()
     sleep(0.2)
-    slowtext("Este mundo é amplamente habitado por criaturas conhecidas como Pokémon.\n")
+    slow_text("Este mundo é amplamente habitado por criaturas conhecidas como Pokémon.\n")
     keyboard.wait('space')
 
-    slowtext("Nós,", False)
+    slow_text("Nós,", False)
     sleep(0.3)
-    slowtext(" humanos,", False)
+    slow_text(" humanos,", False)
     sleep(0.3)
-    slowtext(" vivemos ao lado dos Pokémon —", False)
+    slow_text(" vivemos ao lado dos Pokémon —", False)
     sleep(0.3)
-    slowtext(" às vezes como companheiros amigáveis ​​e,", False)
+    slow_text(" às vezes como companheiros amigáveis ​​e,", False)
     sleep(0.3)
-    slowtext(" outras vezes,", False)
+    slow_text(" outras vezes,", False)
     sleep(0.3)
-    slowtext(" como parceiros de trabalho.")
+    slow_text(" como parceiros de trabalho.")
 
     sleep(0.7)
-    slowtext("e,", False)
+    slow_text("e,", False)
     sleep(0.3)
-    slowtext(" às vezes,", False)
+    slow_text(" às vezes,", False)
     sleep(0.3)
-    slowtext(" nos unimos e lutamos contra outros como nós.\n")
+    slow_text(" nos unimos e lutamos contra outros como nós.\n")
     keyboard.wait('space')
 
     clear()
     sleep(0.2)
-    slowtext("Mas,", False)
+    slow_text("Mas,", False)
     sleep(0.3)
-    slowtext(" apesar da nossa proximidade,", False)
+    slow_text(" apesar da nossa proximidade,", False)
     sleep(0.3)
-    slowtext(" não sabemos tudo sobre Pokémon.")
+    slow_text(" não sabemos tudo sobre Pokémon.")
     keyboard.wait('space')
 
 
-def BirchPokeChoise():
+def birch_poke_choise():
     clear()
 
     sleep(0.5)
-    slowtext("Birch - Eii!", False)
+    slow_text("Birch - Eii!", False)
     sleep(0.4)
-    slowtext(" Você ai!!")
+    slow_text(" Você ai!!")
 
     sleep(0.8)
-    slowtext("Por favor!", False)
+    slow_text("Por favor!", False)
     sleep(0.4)
-    slowtext(" Me ajude!\n")
+    slow_text(" Me ajude!\n")
 
     sleep(0.8)
-    slowtext("- Pressione espaço para continuar...")
+    slow_text("- Pressione espaço para continuar...")
     keyboard.wait('space')
 
     clear()
-    slowtext("Na minha bolsa tem algumas pokebolas!\n")
+    slow_text("Na minha bolsa tem algumas pokebolas!\n")
     keyboard.wait('space')
 
 

@@ -1,4 +1,3 @@
-from random import choice
 from rich import print
 
 def recalculate_stats(pokemon):
@@ -65,7 +64,7 @@ def gain_exp(pokemon, amount):
 
     return levelups
 
-def lvlUpSystem(pokemon, exp):
+def lvl_up_system(pokemon, exp):
     levelups = gain_exp(pokemon, exp)
 
     if levelups:

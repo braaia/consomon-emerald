@@ -4,7 +4,7 @@ import keyboard, os, sys
 
 clear = lambda: os.system('cls')
 
-def slowtext(text, newline=True):
+def slow_text(text, newline=True):
     for i in list(text):
         print(i, end='')
         sys.stdout.flush()
@@ -32,7 +32,7 @@ def read_choice(valid_choices):
         )
 
 
-def CurrentArea(area):
+def current_area(area: int):
     area_atual = None
     match area:
         case 1:
@@ -50,10 +50,10 @@ def CurrentArea(area):
     return area_atual
 
     
-def PokeChoise(pokedex):
-    slowtext("PROF. BIRCH está com problemas!")
+def poke_choise(pokedex):
+    slow_text("PROF. BIRCH está com problemas!")
     sleep(0.5)
-    slowtext("Escolha um Pokémon e resgate ele!\n")
+    slow_text("Escolha um Pokémon e resgate ele!\n")
     sleep(0.5)
 
     print("--------========--------")
