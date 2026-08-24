@@ -14,6 +14,7 @@ def load_backpack():
 def create_empty_backpack():
     return {
         "pokemon": [],
+        "team": [],
         "pokeballs": [
             {"name": "Pokeball", "id": 1, "quantity": 0},
             {"name": "Superball", "id": 2, "quantity": 0},
@@ -35,6 +36,8 @@ def save_backpack(backpack):
 
 def add_pokemon(backpack, pokemon):
     backpack["pokemon"].append(pokemon)
+    if len(backpack["team"]) < 6:
+        backpack["team"].append(pokemon)
     save_backpack(backpack)
 
 
@@ -55,8 +58,8 @@ def add_item(backpack, item_id, quantity=1):
 
 
 def remove_pokemon(backpack, pokemon_index):
-    if 0 <= pokemon_index < len(backpack["pokemon"]):
-        backpack["pokemon"].pop(pokemon_index)
+    if 0 <= pokemon_index < len(backpack["team"]):
+        backpack["team"].pop(pokemon_index)
         save_backpack(backpack)
         return True
     return False
