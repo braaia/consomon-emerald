@@ -1,4 +1,4 @@
-import json, keyboard
+import json, keyboard, random
 from random import randint, choice, uniform
 from rich import print
 from rich.panel import Panel
@@ -9,11 +9,9 @@ from backend.functions import clear, current_area, read_choice, slow_text
 from backend.world import exploring, process_area_events
 from time import sleep
 
+
 with open('json/pokedex.json', 'r', encoding='utf-8') as arq:
     pokedex = json.load(arq)
-
-with open('json/backpack.json', 'r', encoding='utf-8') as arq:
-    backpack = json.load(arq)
 
 with open('json/areas.json', 'r', encoding='utf-8') as arq:
     areas = json.load(arq)
@@ -138,6 +136,10 @@ def searching(area=current_area_id, searching=False):
             match action_choice:
                 case 1:
                     fight(backpack['team'][0], chosen_pokemon)
+                case 2:
+                    pass
+                case 3:
+                    pass    
         else:
             print(chance_find)
             if searching:
@@ -152,8 +154,30 @@ def searching(area=current_area_id, searching=False):
 with open("json/moves.json", "r", encoding="utf-8") as arq:
     moves = json.load(arq)
 
+def calculate_xp(enemy_level):
+    xp_table = [
+        (1, 3, 40, 70),
+        (4, 6, 60, 100),
+        (7, 9, 90, 140),
+        (10, 12, 120, 180),
+        (13, 15, 160, 230),
+        (16, 18, 210, 290),
+        (19, 21, 270, 360),
+        (22, 24, 330, 440),
+        (25, 27, 400, 530),
+        (28, 30, 470, 620),
+        (31, 33, 550, 720),
+        (34, 35, 650, 850)
+    ]
+
+    for min_level, max_level, min_xp, max_xp in xp_table:
+
+        if min_level <= enemy_level <= max_level:
+            return random.randint(min_xp, max_xp)
+
+    return 0
+
 def fight(player, enemy):
-    global moves
     try:
         player_name = player['name']
         enemy_name = enemy['name']
@@ -177,6 +201,8 @@ def fight(player, enemy):
         attack2 = moveset[1]['name'] if player_level >= player['moveset'][1]['level'] else "----------"
         attack3 = moveset[2]['name'] if player_level >= player['moveset'][2]['level'] else "----------"
         attack4 = moveset[3]['name'] if player_level >= player['moveset'][3]['level'] else "----------"
+
+        xp_gain = calculate_xp(enemy_level)
 
         while True:
             try:
@@ -240,13 +266,19 @@ def fight(player, enemy):
                     
                     else:
                         clear()
-                        print(f"\n[bold]{enemy_name}[/bold] foi derrotado!")
+                        print(f"[bright_white]{enemy_name} ficou [bold red1]sem HP e desmaiou!\n")
+                        print(f"[bright_white]Você ganhou [bold green3]{xp_gain} XP!")
+
+                        lvl_up_system(backpack['team'][0], xp_gain)
+
                         print(skip)
                         keyboard.wait('space')
                         break                            
                 else:
                     clear()
-                    print(f"\nVocê foi derrotado!")
+                    print(f"[bright_white]{player_name} ficou [bold red1]sem HP e desmaiou!\n")
+                    print(f"\n[bright_white]Você foi [bold red1]derrotado!")
+
                     print(skip)
                     keyboard.wait('space')
                     break
@@ -255,64 +287,100 @@ def fight(player, enemy):
     except:
         pass
 
-def fighting(player, enemy, selected_attack, player_name, enemy_name, player_hp, enemy_hp):
-    #region Status
-    player_speed = player['current_stats']['speed']
-    enemy_speed = enemy['current_stats']['speed']
+def get_turn_order(player, enemy, player_move, enemy_move):
+    player_order = (
+        player_move.get("priority", 0),
+        player["current_stats"]["speed"]
+    )
+    enemy_order = (
+        enemy_move.get("priority", 0),
+        enemy["current_stats"]["speed"]
+    )
 
-    player_power = selected_attack['power']
+    if player_order > enemy_order:
+        return ("player", "enemy")
+
+    if enemy_order > player_order:
+        return ("enemy", "player")
+
+    return choice([
+        ("player", "enemy"),
+        ("enemy", "player")
+    ])
+
+def calculate_damage(attacker, defender, move):
+    if move["category"] == "Physical":
+        attack = attacker["current_stats"]["atk"]
+        defense = defender["current_stats"]["def"]
+    else:
+        attack = attacker["current_stats"]["sp.atk"]
+        defense = defender["current_stats"]["sp.def"]
+
+    return (
+        move["power"]
+        * ((attack / max(1, defense))
+        / 4)
+        * uniform(0.9, 1.1)
+    )
+
+def fighting(player, enemy, selected_attack, player_name, enemy_name, player_hp, enemy_hp):
     enemy_moveset = []
+
     for attack in enemy['moveset']:
         for move in moves:
             if attack['id'] == move['id']:
                 enemy_moveset.append(move)
+
     enemy_move = choice(enemy_moveset)
-    enemy_power = enemy_move['power']
 
-    player_atk = player['current_stats']['atk']
-    enemy_atk = enemy['current_stats']['atk']
+    turn_order = get_turn_order(
+        player,
+        enemy,
+        selected_attack,
+        enemy_move
+    )
 
-    player_sp_atk = player['current_stats']['sp.atk']
-    enemy_sp_atk = enemy['current_stats']['sp.atk']
+    for attacker in turn_order:
+        if attacker == "player":
+            if player_hp <= 0 or enemy_hp <= 0:
+                break
 
-    player_def = player['current_stats']['def']
-    enemy_def = player['current_stats']['def']
+            damage = calculate_damage(player, enemy, selected_attack)
+            enemy_hp = max(0, enemy_hp - damage)
 
-    player_sp_def = player['current_stats']['sp.def']
-    enemy_sp_def = enemy['current_stats']['sp.def']
+            with Progress() as prog:
+                task = prog.add_task('Atacando...', total=10)
+                while not prog.finished:
+                    sleep(0.3)
+                    prog.update(task, advance=2.5)
 
-    player_damage = (player_power * (player_atk/enemy_def) / 3) * uniform(0.9, 1.1)
-    enemy_damage = (enemy_power * (enemy_atk/player_def) / 3) * uniform(0.9, 1.1)
+            print(
+                f"\n[bold blue1]{player_name}[/bold blue1] [bright_white]usa[/bright_white] [bold italic bright_white]{selected_attack['name']}![/bold italic bright_white]\n"
+                f"[bold italic red1]{enemy_name}[/bold italic red1] [italic bright_white]perdeu[/italic bright_white] [bold red1]{round(damage)} HP![/bold red1]\n"
+            )
 
-    player_sp_damage = (player_power * (player_sp_atk/enemy_sp_def) / 3) * uniform(0.9, 1.1)
-    enemy_sp_damage = (enemy_power * (enemy_sp_atk/player_sp_def) / 3) * uniform(0.9, 1.1)
-    #endregion
+            sleep(2)
 
-    if selected_attack['category'] == "Physical":
-        enemy_hp = max(0, enemy_hp - player_damage)
-        with Progress() as prog:
-            task = prog.add_task('Atacando...', total=10)
-            while not prog.finished:
-                sleep(0.2)
-                prog.update(task, advance=2.7)
-        print(f"""\n{player_name} usa {selected_attack['name']}!
+        else:
+            if player_hp <= 0 or enemy_hp <= 0:
+                break
 
-É efetivo!
+            damage = calculate_damage(enemy, player, enemy_move)
+            player_hp = max(0, player_hp - damage)
 
-{enemy_name} perdeu {round(player_damage)} HP!""")
-    elif selected_attack['category'] == "Special":
-        enemy_hp = max(0, enemy_hp - player_sp_damage)
-        with Progress() as prog:
-            task = prog.add_task('Atacando...', total=10)
-            while not prog.finished:
-                sleep(0.2)
-                prog.update(task, advance=2.7)
-        print(f"""\n{player_name} usa {selected_attack['name']}!
+            with Progress() as prog:
+                task = prog.add_task('Inimigo atacando...', total=10)
+                while not prog.finished:
+                    sleep(0.3)
+                    prog.update(task, advance=2.5)
 
-É efetivo!
+            print(
+                f"\n[bold italic red1]{enemy_name}[/bold italic red1] [italic bright_white]usa[/italic bright_white] [bold bright_white]{enemy_move['name']}![/bold bright_white]\n"
+                f"[bold blue1]{player_name}[/bold blue1] [bright_white]perdeu[/bright_white] [bold italic red1]{round(damage)} HP![/bold italic red1]\n"
+            )
 
-{enemy_name} perdeu {round(player_sp_damage)} HP!""")
-        
+            sleep(2)
+       
     print(skip)
     keyboard.wait('space')
     return player_hp, enemy_hp
