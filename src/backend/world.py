@@ -19,7 +19,6 @@ def exploring(area_id=current_area_id):
     areas['game_state']['explorations'][str(area_id)][direction] = explorations
 
     steps = f"[bright_white bold italic]Explorações na área:[/bright_white bold italic] [bold blue1]{areas['game_state']['explorations'][str(area_id)][direction]}/10"
-    print(areas['game_state']['explorations'][str(area_id)][direction])
 
     chance = randint(1, 100)
 
