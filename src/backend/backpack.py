@@ -25,6 +25,10 @@ def create_empty_backpack():
             {"name": "Fire Stone", "id": 101, "quantity": 0},
             {"name": "Water Stone", "id": 102, "quantity": 0},
             {"name": "Leaf Stone", "id": 103, "quantity": 0},
+            {"name": "Potion", "id": 111, "quantity": 0},
+            {"name": "Super Potion", "id": 112, "quantity": 0},
+            {"name": "Hyper Potion", "id": 113, "quantity": 0},
+            {"name": "Revive", "id": 114, "quantity": 0},
         ]
     }
 
