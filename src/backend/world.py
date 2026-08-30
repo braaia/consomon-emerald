@@ -1,24 +1,37 @@
 import json
 from random import randint, choice
 from rich import print
-from backend.functions import current_area, read_choice, slow_text
+from backend.functions import current_area, slow_text
 
 with open('json/areas.json', 'r', encoding='utf-8') as arq:
     areas = json.load(arq)
 
 current_area_id = areas['game_state']['current_area']
 direction = areas['game_state']['chosen_paths']['direction']
+explorations = areas["game_state"]["explorations"].get(str(current_area_id), {}).get(direction, 0)
 
-
-def exploring(area_id=current_area_id):
+def exploring(straight = True):
     from chat_system.loop_chats import searching
-    global areas
+    global explorations
 
-    explorations = areas["game_state"]["explorations"].get(str(current_area_id), {}).get(direction, 0)
-    explorations += 1
-    areas['game_state']['explorations'][str(area_id)][direction] = explorations
+    if straight:
+        explorations += 1
+        areas['game_state']['explorations'][str(current_area_id)][direction] = explorations
+    else:
+        explorations -= 1
+        areas['game_state']['explorations'][str(current_area_id)][direction] = explorations
 
-    steps = f"[bright_white bold italic]Explorações na área:[/bright_white bold italic] [bold blue1]{areas['game_state']['explorations'][str(area_id)][direction]}/10"
+    match current_area_id:
+        case 1:
+            total = 10
+        case 2:
+            total = 20
+        case 3:
+            total = 15
+        case 4:
+            total = 25
+
+    steps = f"[bright_white bold italic]Explorações na área:[/bright_white bold italic] [bold blue1]{areas['game_state']['explorations'][str(current_area_id)][direction]}/{total}"
 
     chance = randint(1, 100)
 
@@ -71,14 +84,13 @@ def exploring(area_id=current_area_id):
     #     return
 
 
-def process_area_events(area_id=current_area_id):
-    global current_area_id, areas, direction
-    area_name = current_area(area_id)
+def process_area_events():
+    area_name = current_area(current_area_id)
 
-    current_count = areas['game_state']['explorations'].get(str(area_id), {}).get(direction, 0)
+    current_count = areas['game_state']['explorations'].get(str(current_area_id), {}).get(direction, 0)
     defeated_gyms = areas['game_state']['defeated_gyms']
 
-    area = next(item for item in areas['areas'] if item['id'] == area_id)
+    area = next(item for item in areas['areas'] if item['id'] == current_area_id)
 
     for event in area['events']:
         if current_count == event['trigger_at_exploration']:
@@ -98,6 +110,8 @@ def process_area_events(area_id=current_area_id):
             print("[red bold]Para prosseguir, você precisa derrotar o líder de ginásio dessa cidade primeiro!")
 
 def resolve_event(event):
+    global direction
+
     if event["type"] == "path_choice":
         ...
     elif event["type"] == "item":

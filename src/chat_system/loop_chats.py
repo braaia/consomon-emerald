@@ -5,8 +5,8 @@ from rich.panel import Panel
 from rich.progress import Progress
 from backend.backpack import load_backpack, view_backpack
 from backend.poke_status import *
-from backend.functions import clear, current_area, read_choice, slow_text
-from backend.world import exploring, process_area_events
+from backend.functions import clear, current_area, read_choice
+from backend.world import exploring, process_area_events, current_area_id
 from time import sleep
 
 
@@ -17,12 +17,10 @@ with open('json/areas.json', 'r', encoding='utf-8') as arq:
     areas = json.load(arq)
 
 backpack = load_backpack()
-current_area_id = areas['game_state']['current_area']
 
 skip = "\n[bold italic green1]Pressione espaço para continuar..."
 
 def walking(area=current_area_id):
-    global skip, areas
     area_name = current_area(area)
 
     while True:
@@ -31,19 +29,17 @@ def walking(area=current_area_id):
             print(f"[bold italic]Você entrou na [/bold italic][bold]{area_name}\n")
 
             print(f"""[green]1. Explorar
-[yellow]2. Procurar Pokémon
-[orange4]3. Abrir Inventário
-[bright_magenta]4. Usar Poção
-[red]5. Sair\n""")
+[green3]2. Ir para trás
+[yellow]3. Procurar Pokémon
+[orange4]4. Abrir Inventário
+[bright_magenta]5. Usar Poção
+[red]6. Sair\n""")
 
             sleep(0.4)
-            action_choice = read_choice(["1", "2", "3", "4", "5"])
+            action_choice = read_choice(["1", "2", "3", "4", "5", "6"])
 
             if action_choice is None:
                 break
-
-            direction = areas['game_state']['chosen_paths']['direction']
-            current_count = areas['game_state']['explorations'].get(str(current_area_id), {}).get(direction, 0)
 
             match action_choice:
                 case 1:
@@ -52,20 +48,31 @@ def walking(area=current_area_id):
                     print(skip)
                     keyboard.wait('space')
                     continue
+
                 case 2:
+                    exploring(False)
+                    process_area_events()
+                    print(skip)
+                    keyboard.wait('space')
+                    continue
+                    
+                case 3:
                     searching(searching=True)
                     print(skip)
                     keyboard.wait('space')
                     continue
-                case 3:
+
+                case 4:
                     open_backpack()
                     continue
-                case 4:
+
+                case 5:
                     print("[red bold]Em construção...")
                     print(skip)
                     keyboard.wait('space')
                     continue
-                case 5:
+
+                case 6:
                     with Progress() as prog:
                         task = prog.add_task('Saindo...', total=15)
                         while not prog.finished:
@@ -387,7 +394,6 @@ def fighting(player, enemy, selected_attack, player_name, enemy_name, player_hp,
 
 
 def open_backpack():
-    global skip
     info = view_backpack(backpack)
 
     while True:
