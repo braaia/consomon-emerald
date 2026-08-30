@@ -2,9 +2,9 @@
   {
     "id": 1,
     "name": "Treecko",
-    "level": 5,
+    "level": 1,
     "exp": 0,
-    "exp_to_next": 200,
+    "exp_to_next": 100,
     "types": [
       "Grass"
     ],
@@ -41,9 +41,9 @@
   {
     "id": 2,
     "name": "Torchic",
-    "level": 5,
+    "level": 1,
     "exp": 0,
-    "exp_to_next": 200,
+    "exp_to_next": 100,
     "types": [
       "Fire"
     ],
@@ -80,9 +80,9 @@
   {
     "id": 3,
     "name": "Mudkip",
-    "level": 5,
+    "level": 1,
     "exp": 0,
-    "exp_to_next": 200,
+    "exp_to_next": 100,
     "types": [
       "Water"
     ],
