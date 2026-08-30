@@ -1,0 +1,24 @@
+{
+    "potion": [
+        {
+            "id": 111,
+            "name": "Potion",
+            "value": 20
+        },
+        {
+            "id": 112,
+            "name": "Super Potion",
+            "value": 50
+        },
+        {
+            "id": 113,
+            "name": "Hyper Potion",
+            "value": 100
+        },
+        {
+            "id": 114,
+            "name": "Revive",
+            "value": 50
+        }
+    ]
+}
