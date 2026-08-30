@@ -20,19 +20,15 @@ def gain_exp(pokemon, amount):
     levelups = []
 
     while pokemon["exp"] >= pokemon["exp_to_next"]:
-        # Guardar stats antigos ANTES de subir de level
         old_stats = pokemon["current_stats"].copy() if "current_stats" in pokemon else None
         
-        # Aplicar a mudança de level
         pokemon["exp"] -= pokemon["exp_to_next"]
         pokemon["level"] += 1
         pokemon["exp_to_next"] = int(100 + (pokemon["level"] - 1) * 35)
 
-        # Recalcular stats com o novo level
         recalculate_stats(pokemon)
         new_stats = pokemon["current_stats"]
 
-        # Calcular diferenças
         if old_stats:
             stat_gains = {
                 "hp": new_stats["hp"] - old_stats["hp"],
@@ -52,7 +48,6 @@ def gain_exp(pokemon, amount):
                 "sp.def": new_stats["sp.def"],
             }
 
-        # Guardar informação do levelup
         levelups.append({
             "new_level": pokemon["level"],
             "stat_gains": stat_gains,
@@ -76,4 +71,5 @@ def lvl_up_system(pokemon, exp):
             print(f"[bold]Stats atuais:[/bold] {levelup['new_stats']}")
             print(f"[bold]XP necessário para o proximo nível:[/bold] {pokemon['exp']}/{pokemon['exp_to_next']}")
     else:
-        print("\n[yellow]Nenhum levelup ocorreu[/yellow]")
+        print("\n[yellow]Nenhum levelup ocorreu[/yellow]\n")
+        print(f"[bold]XP necessário para o proximo nível:[/bold] {pokemon['exp']}/{pokemon['exp_to_next']}")
