@@ -204,15 +204,17 @@ def fight(player, enemy):
                 if attack['id'] == move['id']:
                     moveset.append(move)
 
-        attack1 = moveset[0]['name'] if player_level >= player['moveset'][0]['level'] else "----------"
-        attack2 = moveset[1]['name'] if player_level >= player['moveset'][1]['level'] else "----------"
-        attack3 = moveset[2]['name'] if player_level >= player['moveset'][2]['level'] else "----------"
-        attack4 = moveset[3]['name'] if player_level >= player['moveset'][3]['level'] else "----------"
+        pp_attacks = [10, 10, 10, 10]
 
         xp_gain = calculate_xp(enemy_level)
 
         while True:
             try:
+                attack1 = moveset[0]['name'] + f" | PP = {pp_attacks[0]}" if player_level >= player['moveset'][0]['level'] else "----------"
+                attack2 = moveset[1]['name'] + f" | PP = {pp_attacks[1]}" if player_level >= player['moveset'][1]['level'] else "----------"
+                attack3 = moveset[2]['name'] + f" | PP = {pp_attacks[2]}" if player_level >= player['moveset'][2]['level'] else "----------"
+                attack4 = moveset[3]['name'] + f" | PP = {pp_attacks[3]}" if player_level >= player['moveset'][3]['level'] else "----------"
+
                 if player_hp > 0:
                     if enemy_hp > 0:    
                         clear()
@@ -250,6 +252,8 @@ def fight(player, enemy):
                                 if attack_selection is None:
                                     continue
 
+                                pp_attacks[attack_selection - 1] -= 1
+
                                 selected_attack = moveset[attack_selection - 1]
 
                                 if player_level < player["moveset"][attack_selection - 1]["level"]:
@@ -281,7 +285,7 @@ def fight(player, enemy):
                 else:
                     clear()
                     print(f"[bright_white]{player_name} ficou [bold red1]sem HP e desmaiou!\n")
-                    print(f"\n[bright_white]Você foi [bold red1]derrotado!")
+                    print(f"[bright_white]Você foi [bold red1]derrotado!")
                     break
             except Exception as error:
                 print(f"[red]{error}")
