@@ -85,6 +85,8 @@ def exploring(straight = True):
 
 
 def process_area_events():
+    global current_area_id
+
     area_name = current_area(current_area_id)
 
     current_count = areas['game_state']['explorations'].get(str(current_area_id), {}).get(direction, 0)
