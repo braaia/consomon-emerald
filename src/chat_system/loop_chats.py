@@ -277,17 +277,11 @@ def fight(player, enemy):
                         print(f"[bright_white]Você ganhou [bold green3]{xp_gain} XP!")
 
                         lvl_up_system(backpack['team'][0], xp_gain)
-
-                        print(skip)
-                        keyboard.wait('space')
                         break                            
                 else:
                     clear()
                     print(f"[bright_white]{player_name} ficou [bold red1]sem HP e desmaiou!\n")
                     print(f"\n[bright_white]Você foi [bold red1]derrotado!")
-
-                    print(skip)
-                    keyboard.wait('space')
                     break
             except Exception as error:
                 print(f"[red]{error}")
